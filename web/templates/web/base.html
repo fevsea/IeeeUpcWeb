@@ -14,6 +14,8 @@
       {% block title %}IEEE BCN SB{% endblock title %}
     </title>
 
+
+    {% block preScripts %}
     <!-- Bootstrap core CSS -->
     <link href="{% static "web/css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "web/css/theme.css" %}" rel="stylesheet">
@@ -41,6 +43,8 @@
     <link type="text/css" href="{% static "web/css/parallax-slider.css" %}"  rel="stylesheet" />
     <script type="text/javascript" src="{% static "web/js/modernizr.custom.28468.js" %}">
     </script>
+
+    {% endblock preScripts %}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -99,7 +103,7 @@
                       <a href="ieee.html">Agenda</a>
                   </li>
                   <li>
-                      <a href="contact.html">Contacto</a>
+                      <a href="{% url 'web:contact' %}">Contacto</a>
                   </li>
                   <li><input class="form-control search" placeholder=" Search" type="text"></li>
               </ul>
@@ -240,6 +244,8 @@
     <script src="{% static "web/js/common-scripts.js" %}">
     </script>
 
+    {% block postScripts %}
+
     <script type="text/javascript">
       jQuery(document).ready(function() {
 
@@ -293,5 +299,6 @@
 
 
     </script>
+    {% endblock postScripts %}
   </body>
 </html>

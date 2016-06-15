@@ -1,0 +1,168 @@
+{% extends 'web/base.html' %}
+
+{% block title %}Contacto{% endblock title %}
+
+{% block preScripts %}
+  {{ block.super }}
+{% endblock preScripts %}
+
+  {% block content %}
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false">
+    </script>
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-4">
+            <h1>
+              Contacto
+            </h1>
+          </div>
+          <div class="col-lg-8 col-sm-8">
+            <ol class="breadcrumb pull-right">
+              <li>
+                <a href="{% url 'web:index' %}">
+                  Inicio
+                </a>
+              </li>
+              <li class="active">
+                Contacts
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--breadcrumbs end-->
+
+
+
+    <!--container start-->
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-5 col-sm-5 address">
+          <section class="contact-infos">
+            <h4 class="title custom-font text-black">
+              DIRECCIÓN
+            </h4>
+            <address>
+              Edificio Omega, S-105
+              <br>
+              Barcelona (08034), Spain
+            </address>
+          </section>
+          <section class="contact-infos">
+            <h4>
+              CONTACTO
+            </h4>
+            <p>
+              <i class="fa fa-phone pr-10">
+              </i>
+              +034-934137656
+            </p>
+
+            <p>
+              <i class="fa fa-envelope pr-10">
+              </i>
+              ieee@ieee.upc.edu
+            </p>
+
+          </section>
+        </div>
+        <div class="col-lg-7 col-sm-7 address">
+          <h4>
+            Envíenos una línea para que podamos saber de usted
+          </h4>
+          <div class="contact-form">
+            <form role="form">
+              <div class="form-group">
+                <label for="name">
+                  Nombre
+                </label>
+                <input type="text" placeholder="" id="name" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="email">
+                  Email
+                </label>
+                <input type="text" placeholder="" id="email" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="phone">
+                  Mensaje
+                </label>
+                <textarea placeholder="" rows="5" class="form-control">
+                </textarea>
+              </div>
+              <button class="btn btn-info" type="submit">
+                Enviar
+              </button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--container end-->
+
+    <!--google map start-->
+    <div class="contact-map">
+      <div id="map-canvas" style="width: 100%; height: 400px">
+      </div>
+    </div>
+    <!--google map end-->
+
+
+
+{% endblock content %}
+
+{% block postScripts %}
+    <script>
+      wow = new WOW(
+        {
+          boxClass:     'wow',      // default
+          animateClass: 'animated', // default
+          offset:       0          // default
+        }
+      )
+        wow.init();
+    </script>
+
+
+    <script>
+      $(document).ready(function() {
+        //Set the carousel options
+        $('#quote-carousel').carousel({
+          pause: true,
+          interval: 4000,
+        }
+                                     );
+      }
+                       );
+
+      //google map
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(41.388340, 2.113515); 
+        var mapOptions = {
+          zoom: 17,
+          center: myLatlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Contact'
+        }
+                                           );
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+    </script>
+{% endblock postScripts %}
