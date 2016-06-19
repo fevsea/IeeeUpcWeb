@@ -758,7 +758,7 @@ h1[id] {
 }
 
 .bs-example:after {
-    content: "Example";
+    content: "Archivo de publicaciones";
     position: absolute;
     top: 15px;
     left: 15px;

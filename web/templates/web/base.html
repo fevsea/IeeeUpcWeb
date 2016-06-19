@@ -65,7 +65,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="base.html">
+              <a class="navbar-brand" href="{% url 'web:index' %}">
                 <img src="{% static "web/img/IEEE_logo.jpg" %}" alt="Logo IEEE" height="50" width="140"/>
               </a>
           </div>
@@ -76,7 +76,7 @@
                   </li>
                   <li class="dropdown">
                       <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
-                      "dropdown" data-toggle="dropdown" href="#">Actividades <i class="fa fa-angle-down"></i>
+                      "dropdown" data-toggle="dropdown" >Actividades <i class="fa fa-angle-down"></i>
                       </a>
                       <ul class="dropdown-menu">
                           <li>
@@ -92,7 +92,7 @@
                               <a href="table.html">Conferencias</a>
                           </li>
                           <li>
-                              <a href="table.html">Buran</a>
+                              <a href="{% url 'web:buran' %}">Buran</a>
                           </li>
                       </ul>
                   </li>

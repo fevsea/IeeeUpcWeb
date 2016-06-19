@@ -1,0 +1,141 @@
+{% extends 'web/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Buran{% endblock title %}
+
+{# THIS TEMPLATE DOESN'T USE DYNAMIC CONTENT #}
+
+
+{% block content %}
+
+
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-4">
+            <h1>
+              Buran
+            </h1>
+          </div>
+          <div class="col-lg-8 col-sm-8">
+            <ol class="breadcrumb pull-right">
+              <li>
+                <a href="{% url 'web:index' %}">
+                  Inicio
+                </a>
+              </li>
+              <li class="active">
+                Buran
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--container start-->
+    <div class="component-bg">
+      <div class="container">
+
+        <div class="bs-docs-section">
+          <h1 id="tables" class="page-header">
+            Buran
+          </h1>
+
+          <h2 id="tables-example">
+            ¿Que es?
+          </h2>
+          <p>
+Buran es la revista de la Rama de Estudiantes del IEEE de Barcelona. Desde 1993 se edita e imprime en Barcelona, hecha por y para los estudiantes. Eso quiere decir que somos nosotros los que nos encargamos de buscar artículos para Buran, animando a profesores, proyectistas y doctorandos; pero también a estudiantes, como tú que seguramente tienes algo interesante que contar.
+</p>
+<p>
+Buran es una revista de divulgación, y por ello más que aquellos artículos en los que el autor pretende demostrar lo mucho que sabe, nos interesan los que intentan hacer llegar a la gente la tecnología de forma amena y descriptiva.
+</p>
+<p class="mar-b-30">
+Por desgracia hace ya unos años que no hemos podido hacer una nueva edición, por lo que no estamos en disposición de aceptar nuevos artículos. No podemos asegurar cuando se reactivara el proyecto, quizás sea hora de nuevas ideas, de reinventarse...  ¿te apuntas?
+</p> 
+
+          <h2 id="tables-example">
+            Descarga de ejemplares
+          </h2>
+          <p>
+          <div class="bs-example mar-b-30">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>
+                      #
+                    </th>
+                    <th>
+                      Número
+                    </th>
+                    <th>
+                      Fecha publicación
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class='clickable-row' data-href="{% static "web/files/buran/Buran001.pdf" %}">
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      Buran 1
+                    </td>
+                    <td>
+                      1993
+                    </td>
+                  </tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran002.pdf"%}"><td>2</td ><td>Buran 2</td ><td>1993</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran003.pdf"%}"><td>3</td ><td>Buran 3</td ><td>1994</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran004.pdf"%}"><td>4</td ><td>Buran 4</td ><td>1995</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran005.pdf"%}"><td>5</td ><td>Buran 5</td ><td>1995</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran006.pdf"%}"><td>6</td ><td>Buran 6</td ><td>1995</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran007.pdf"%}"><td>7</td ><td>Buran 7</td ><td>1996</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran008.pdf"%}"><td>8</td ><td>Buran 8</td ><td>1996</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran009.pdf"%}"><td>9</td ><td>Buran 9</td ><td>1997</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran010.pdf"%}"><td>10</td ><td>Buran 10</td ><td>1997</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran011.pdf"%}"><td>11</td ><td>Buran 11</td ><td>1998</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran012.pdf"%}"><td>12</td ><td>Buran 12</td ><td>1998</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran013.pdf"%}"><td>13</td ><td>Buran 13</td ><td>1998</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran014.pdf"%}"><td>14</td ><td>Buran 14</td ><td>1999</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran015.pdf"%}"><td>15</td ><td>Buran 15</td ><td>2000</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran016.pdf"%}"><td>16</td ><td>Buran 16</td ><td>2000</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran017.pdf"%}"><td>17</td ><td>Buran 17</td ><td>2001</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran018.pdf"%}"><td>18</td ><td>Buran 18</td ><td>2002</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran019.pdf"%}"><td>19</td ><td>Buran 19</td ><td>2003</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran020.pdf"%}"><td>20</td ><td>Buran 20</td ><td>2003</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran021.pdf"%}"><td>21</td ><td>Buran 21</td ><td>2004</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran022.pdf"%}"><td>22</td ><td>Buran 22</td ><td>2005</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran023.pdf"%}"><td>23</td ><td>Buran 23</td ><td>2006</td ></tr>
+<tr class="" data-href="{% static "web/files/buran/Buran024.pdf"%}"><td>24</td ><td>Buran 24</td ><td></td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran025.pdf"%}"><td>25</td ><td>Buran 25</td ><td>2010 Marzo</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran026.pdf"%}"><td>26</td ><td>Buran 26</td ><td>2011 Septiembre</td ></tr>
+<tr class="clickable-row" data-href="{% static "web/files/buran/Buran027.pdf"%}"><td>27</td ><td>Buran 27</td ><td>2013 Mayo</td ></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- /example -->
+
+        </div>
+      </div>
+    </div>
+    <!--container end-->
+
+{% endblock content %}
+
+{% block postScripts %}
+    {{ block.super }}
+    <script>
+jQuery(document).ready(function($) {
+   $('.clickable-row').css( 'cursor', 'pointer' );
+    $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+    });
+});
+    </script>
+{% endblock postScripts %}

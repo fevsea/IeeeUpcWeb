@@ -1,4 +1,5 @@
-from datetime import datetime, time
+import time
+import datetime
 
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
@@ -13,11 +14,14 @@ def index(request):
 def contact(request):
     return render(request, 'web/contact.html')
 
+def buran(request):
+    return render(request, 'web/buran.html')
+
 def contactSend(request):
-    ts = time()
-    msg = datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+    ts = time.time()
+    msg = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S') + '\n'
     msg += request.POST['name'] + '\n' + request.POST['email'] +'\n'
-    msg +=  '############################################################\n\n\n'
+    msg +=  '################################################\n\n\n'
     msg += request.POST['msg']
     send(msg);
     return HttpResponseRedirect(reverse('web:index'))
