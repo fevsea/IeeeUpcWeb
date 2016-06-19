@@ -9,4 +9,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     # ex: /web/contact
     url(r'^contact$', views.contact, name='contact'),
+    # ex: /web/contact/send
+    url(r'^contact/send$', views.contactSend, name='contactSend'),
 ]

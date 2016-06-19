@@ -77,24 +77,25 @@
             Envíenos una línea para que podamos saber de usted
           </h4>
           <div class="contact-form">
-            <form role="form">
+            <form role="form"action="{% url 'web:contactSend' %}" method="post">
+            {% csrf_token %}
               <div class="form-group">
                 <label for="name">
                   Nombre
                 </label>
-                <input type="text" placeholder="" id="name" class="form-control">
+                <input type="text" placeholder="" name="name" id="name" class="form-control">
               </div>
               <div class="form-group">
                 <label for="email">
                   Email
                 </label>
-                <input type="text" placeholder="" id="email" class="form-control">
+                <input type="text" placeholder="" name="email" id="email" class="form-control">
               </div>
               <div class="form-group">
                 <label for="phone">
                   Mensaje
                 </label>
-                <textarea placeholder="" rows="5" class="form-control">
+                <textarea placeholder="" name="msg" rows="5" class="form-control">
                 </textarea>
               </div>
               <button class="btn btn-info" type="submit">
