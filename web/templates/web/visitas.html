@@ -1,0 +1,129 @@
+{% extends 'web/base.html' %}
+
+{% block title %}Visitas | IEEE BCN SB{% endblock title %}
+
+
+  {% block content %}
+
+
+
+<!--breadcrumbs start-->
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-4">
+            <h1>
+              Visitas
+            </h1>
+          </div>
+          <div class="col-lg-8 col-sm-8">
+            <ol class="breadcrumb pull-right">
+              <li>
+                <a href="{% url 'web:index' %}">
+                  Inicio
+                </a>
+              </li>
+              <li class="active">
+                Visitas
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--breadcrumbs end-->
+
+
+    <!--container start-->
+    <div class="container">
+      <div class="row">
+        <!--blog start-->
+        <div class="col-lg-9 ">
+
+      {% if visitas_list %}
+    <ul>
+    {% for visita in visitas_list %}
+        <div class="blog-item">
+            <div class="row">
+              <div class="col-lg-2 col-sm-2">
+                <div class="date-wrap">
+                  <span class="date">
+                    {{ visita.date.day }}
+                  </span>
+                  <span class="month">
+                    {{  visita.month}}
+                  </span>
+                </div>
+
+              </div>
+              <div class="col-lg-10 col-sm-10">
+                  {% if visita.img %}
+                  <div class="blog-img">
+                    <img src="{{ visita.img.url }}" alt="Imagen del lugar de la visita"/>
+                  </div>
+                  {% endif %}
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-2 col-sm-2 text-right">
+                <div class="author">
+                  Por
+                  <a href="#">
+                    {{ username }}
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-10 col-sm-10">
+                <h1>
+                  <a href="blog-detail.html">
+                    {{ visita.title }}
+                  </a>
+                </h1>
+                <p>
+                    {% autoescape off %}
+                      {{ visita.resumen }}
+                    {% endautoescape %}
+                </p>
+                <a href="{% url 'web:curso' curso.id %}" class="btn btn-primary">
+                  Mas información
+                </a>
+              </div>
+            </div>
+          </div>
+    {% endfor %}
+    </ul>
+    {% else %}
+        <h2>No hay visitas que mostrar... por ahora.</h2>
+    {% endif %}
+
+        </div>
+
+        <div class="col-lg-3">
+          <div class="blog-side-item">
+           <!-- Side content -->
+
+          </div>
+        </div>
+
+        <!--blog end-->
+      </div>
+
+    </div>
+    <!--container end-->
+
+{% endblock content %}
+
+{% block postScripts %}
+  {{ block.super }}
+      <script>
+      wow = new WOW(
+        {
+          boxClass:     'wow',      // default
+          animateClass: 'animated', // default
+          offset:       0          // default
+        }
+      )
+        wow.init();
+    </script>
+{% endblock postScripts %}
