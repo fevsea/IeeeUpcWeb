@@ -1,0 +1,99 @@
+{% extends 'web/base.html' %}
+{% load staticfiles %}
+
+{% block title %}IEEE | IEEE BCN SB{% endblock title %}
+
+
+{% block content %}
+
+
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-4">
+            <h1>
+             ¿IEEE?
+            </h1>
+          </div>
+          <div class="col-lg-8 col-sm-8">
+            <ol class="breadcrumb pull-right">
+              <li>
+                <a href="{% url 'web:index' %}">
+                  Inicio
+                </a>
+              </li>
+              <li class="active">
+                IEEE
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--container start-->
+    <div class="component-bg">
+      <div class="container">
+
+        <div class="bs-docs-section">
+          <h1 id="tables" class="page-header">
+            IEEE
+          </h1>
+
+          <h2 id="tables-example">
+            ¿Qué es el IEEE Barcelona Student Branch? 
+          </h2>
+          <p>
+            Somos un grupo de estudiantes de ingeniería a los que les apasionan las nuevas tecnologías y que tienen inquietudes tanto ciéntificas como técnicas. Sin embargo, somos mucho más que eso. Somos un grupo de amigos llenos de ilusión, ganas de pasarlo bien y, por qué no decirlo, de aprender.
+          </p>
+          <p>
+            Nuestro objetivo es profundizar en todos los conocimientos tecnológicos que conocemos y desarrollar actividades que faciliten que estudiantes como nosotros puedan llegar tener ese conocimiento a su alcance.
+          </p>
+
+          <h2 id="tables-example">
+            ¿Qué es el IEEE?
+          </h2>
+          <p>
+            IEEE son las siglas del Institute of Electrical and Electronic Engineers, una organización técnica y profesional de ámbito mundial dedicada a dar soporte a la teoría y aplicaciones de la ingeniería eléctrica, electrónica y de la informática. Desde su fundación en el año 1884, el IEEE se ha ido expandiendo por más de 150 países y ha alcanzado un número de asociados de más de 320.000 (1.500 en España), de los cuales 50.000 son estudiantes. El IEEE es actualmente la sociedad técnica con mayor número de socios del mundo, agrupando ingenieros, informáticos, físicos y matemáticos.
+          </p>
+          <p>
+            El IEEE promueve el desarrollo de todos los campos relacionados con la tecnología, la informática y la ingeniería, tanto en los aspectos teóricos como en los prácticos. Para facilitar el cumplimiento de este objetivo, el IEEE se divide en sociedades especializadas (37 actualmente) en los diferentes sectores que comprende. Además de publicar alrededor del 25% de las publicaciones técnicas a nivel mundial en los campos de la ingeniería eléctrica, la electrónica y la informática, organiza conferencias, simposiums y encuentros locales y proporciona programas educacionales para mantener a sus miembros en la vanguardia de los avances tecnológicos y científicos.
+          </p>
+          <p class="mar-b-20">
+            La Sección Española del IEEE pertenece a la Región 8 de entre las 10 en que se divide el organismo, región que comprende Europa, África y Oriente Medio. Desde las secciones nacionales se promueven las actividades del IEEE en cada país.
+          </p>
+
+          <h2 id="tables-example">
+            ¿Qué son las ramas de estudiantes del IEEE?
+          </h2>
+          <p>
+            El IEEE promueve y patrocina más de 700 Ramas de Estudiantes en todo el mundo, dando la posibilidad a futuros profesionales de desarrollar las habilidades necesarias para moverse más cómodamente en el complejo mundo laboral.
+          </p>
+          <p class="mar-b-30">
+            Ser miembro de una de las Ramas y colaborar en las actividades que desde ella se organizan, recibir las publicaciones periódicas del IEEE y entrar en contacto con la dinámica de un grupo de trabajo proporciona una serie de conocimientos añadidos y experiencia, además de poner en contacto a los estudiantes con ingenieros profesionales.
+          </p>
+
+
+          </div>
+          <!-- /example -->
+
+        </div>
+      </div>
+    </div>
+    <!--container end-->
+
+{% endblock content %}
+
+{% block postScripts %}
+    {{ block.super }}
+    <script>
+jQuery(document).ready(function($) {
+   $('.clickable-row').css( 'cursor', 'pointer' );
+    $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+    });
+});
+    </script>
+{% endblock postScripts %}

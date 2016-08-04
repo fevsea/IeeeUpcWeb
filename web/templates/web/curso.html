@@ -1,19 +1,17 @@
 {% extends 'web/base.html' %}
 
-{% block title %}Visitas | IEEE BCN SB{% endblock title %}
+{% block title %}Curso | IEEE BCN SB{% endblock title %}
 
 
   {% block content %}
 
-
-
-<!--breadcrumbs start-->
+    <!--breadcrumbs start-->
     <div class="breadcrumbs">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-sm-4">
             <h1>
-              Visitas
+                {{ curso.title }}
             </h1>
           </div>
           <div class="col-lg-8 col-sm-8">
@@ -23,8 +21,13 @@
                   Inicio
                 </a>
               </li>
+              <li>
+                <a href="{% url 'web:cursos' %}">
+                  Cursos
+                </a>
+              </li>
               <li class="active">
-                Visitas
+                Curso
               </li>
             </ol>
           </div>
@@ -40,26 +43,23 @@
         <!--blog start-->
         <div class="col-lg-9 ">
 
-      {% if visitas_list %}
-    <ul>
-    {% for visita in visitas_list %}
         <div class="blog-item">
             <div class="row">
               <div class="col-lg-2 col-sm-2">
                 <div class="date-wrap">
                   <span class="date">
-                    {{ visita.date_start.day }}
+                    {{ curso.date_start.day }}
                   </span>
                   <span class="month">
-                    {{ visita.month }} {{ visita.date_start.year }}
+                    {{ curso.month }} {{ curso.date_start.year }}
                   </span>
                 </div>
 
               </div>
               <div class="col-lg-10 col-sm-10">
-                  {% if visita.img %}
+                  {% if curso.img %}
                   <div class="blog-img">
-                    <img src="{{ visita.img.url }}" alt="Imagen del lugar de la visita"/>
+                    <img src="{{ curso.img.url }}" alt="Imagen del tema del curso"/>
                   </div>
                   {% endif %}
 
@@ -76,26 +76,16 @@
               </div>
               <div class="col-lg-10 col-sm-10">
                 <h1>
-                  <a href="{% url 'web:visita' visita.id %}">
-                    {{ visita.title }}
-                  </a>
+                    {{ curso.title }}
                 </h1>
                 <p>
                     {% autoescape off %}
-                      {{ visita.summary }}
+                      {{ curso.description }}
                     {% endautoescape %}
                 </p>
-                <a href="{% url 'web:visita' visita.id %}" class="btn btn-primary">
-                  Mas información
-                </a>
               </div>
             </div>
           </div>
-    {% endfor %}
-    </ul>
-    {% else %}
-        <h2>No hay visitas que mostrar... por ahora.</h2>
-    {% endif %}
 
         </div>
 

@@ -1,6 +1,6 @@
 {% extends 'web/base.html' %}
 
-{% block title %}Visitas | IEEE BCN SB{% endblock title %}
+{% block title %}Proyectos | IEEE BCN SB{% endblock title %}
 
 
   {% block content %}
@@ -13,7 +13,7 @@
         <div class="row">
           <div class="col-lg-4 col-sm-4">
             <h1>
-              Visitas
+              Proyectos
             </h1>
           </div>
           <div class="col-lg-8 col-sm-8">
@@ -24,7 +24,7 @@
                 </a>
               </li>
               <li class="active">
-                Visitas
+                Proyectos
               </li>
             </ol>
           </div>
@@ -40,26 +40,26 @@
         <!--blog start-->
         <div class="col-lg-9 ">
 
-      {% if visitas_list %}
+      {% if proyectos_list %}
     <ul>
-    {% for visita in visitas_list %}
+    {% for proyecto in proyectos_list %}
         <div class="blog-item">
             <div class="row">
               <div class="col-lg-2 col-sm-2">
                 <div class="date-wrap">
                   <span class="date">
-                    {{ visita.date_start.day }}
+                    {{ proyecto.date_start.day }}
                   </span>
                   <span class="month">
-                    {{ visita.month }} {{ visita.date_start.year }}
+                    {{ proyecto.month }} {{ proyecto.date_start.year }}
                   </span>
                 </div>
 
               </div>
               <div class="col-lg-10 col-sm-10">
-                  {% if visita.img %}
+                  {% if proyecto.img %}
                   <div class="blog-img">
-                    <img src="{{ visita.img.url }}" alt="Imagen del lugar de la visita"/>
+                    <img src="{{ proyecto.img.url }}" alt="Imagen del proyecto"/>
                   </div>
                   {% endif %}
 
@@ -76,16 +76,16 @@
               </div>
               <div class="col-lg-10 col-sm-10">
                 <h1>
-                  <a href="{% url 'web:visita' visita.id %}">
-                    {{ visita.title }}
+                  <a href="{% url 'web:proyecto' proyecto.id %}">
+                    {{ proyecto.title }}
                   </a>
                 </h1>
                 <p>
                     {% autoescape off %}
-                      {{ visita.summary }}
+                      {{ proyecto.summary }}
                     {% endautoescape %}
                 </p>
-                <a href="{% url 'web:visita' visita.id %}" class="btn btn-primary">
+                <a href="{% url 'web:proyecto' proyecto.id %}" class="btn btn-primary">
                   Mas información
                 </a>
               </div>
@@ -94,7 +94,7 @@
     {% endfor %}
     </ul>
     {% else %}
-        <h2>No hay visitas que mostrar... por ahora.</h2>
+        <h2>No hay proyectos que mostrar... por ahora.</h2>
     {% endif %}
 
         </div>

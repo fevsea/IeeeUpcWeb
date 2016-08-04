@@ -11,23 +11,23 @@
         <div class="row">
           <div class="col-lg-4 col-sm-4">
             <h1>
-              Visitas
+                {{ visita.title }}
             </h1>
           </div>
           <div class="col-lg-8 col-sm-8">
             <ol class="breadcrumb pull-right">
               <li>
-                <a href="#">
+                <a href="{% url 'web:index' %}">
                   Inicio
                 </a>
               </li>
               <li>
-                <a href="#">
-                  Blog
+                <a href="{% url 'web:visitas' %}">
+                  Visitas
                 </a>
               </li>
               <li class="active">
-                Blog Details
+                Visita
               </li>
             </ol>
           </div>
@@ -48,10 +48,10 @@
               <div class="col-lg-2 col-sm-2">
                 <div class="date-wrap">
                   <span class="date">
-                    {{ visita.date.day }}
+                    {{ visita.date_start.day }}
                   </span>
                   <span class="month">
-                    {{  visita.month}}
+                    {{ visita.month }} {{ visita.date_start.year }}
                   </span>
                 </div>
 
@@ -76,9 +76,7 @@
               </div>
               <div class="col-lg-10 col-sm-10">
                 <h1>
-                  <a href="blog-detail.html">
                     {{ visita.title }}
-                  </a>
                 </h1>
                 <p>
                     {% autoescape off %}

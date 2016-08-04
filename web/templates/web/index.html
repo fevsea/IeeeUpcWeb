@@ -1,0 +1,93 @@
+{% extends 'web/base.html' %}
+{% load staticfiles %}
+
+
+{% block title %}IEEE BCN SB{% endblock title %}
+
+{% block preScripts %}
+  {{ block.super }}
+{% endblock preScripts %}
+
+  {% block content %}
+
+    <!-- Sequence Modern Slider -->
+    <div id="da-slider" class="da-slider">
+    </div>
+
+
+    <div class="container">
+      <div class="row mar-b-50">
+        <div class="col-md-12">
+          <div class="text-center feature-head wow fadeInDown">
+            <h1 class="">
+              IEEE BCN SB
+            </h1>
+
+          </div>
+
+
+          <div class="feature-box">
+            <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
+              <div class="feature-box-heading">
+                <em>
+                <img src="{% static "web/img/ieee.jpg" %}" alt="" width="80" height="90">
+
+                </em>
+                <h4>
+                  <b>¿Que es el IEEE?</b>
+                </h4>
+              </div>
+              <p class="text-center">
+               IEEE es una asociación mundial de ingenieros con miles de miembros
+                cuyo objetivo es hacer avanzar la ingeniería. <a href="{% url 'web:ieee' %}"> Mas infromación.</a>
+              </p>
+            </div>
+            <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
+              <div class="feature-box-heading">
+                <em>
+                  <img src="{% static "web/img/2.png" %}" alt="" width="100" height="100">
+                </em>
+                <h4>
+                  <b>Proyectos</b>
+                </h4>
+              </div>
+              <p class="text-center">
+                Como actividad principal de la associación hacemos continuamente proyectos tecnológicos de todo tipo. <a href="{% url 'web:proyectos' %}">Averigua que se cuece!</a>
+              </p>
+            </div>
+            <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
+              <div class="feature-box-heading">
+                <em>
+                  <img src="{% static "web/img/3.png" %}" alt="" width="100" height="100">
+                </em>
+                <h4>
+                  <b>Agenda</b>
+                </h4>
+              </div>
+              <p class="text-center">
+                Organizamos periódicamente actividades abiertas a todo el mundo como visitas organizadas a centros tecnológicos o cursos. <a href="{% url 'web:visitas' %}">No te pierdas nada.</a>
+              </p>
+            </div>
+          </div>
+
+          <!--feature end-->
+        </div>
+      </div>
+    </div>
+
+
+        <!--property start-->
+      <div class="bg-lg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft">
+            <img src="{% static "web/img/temp.jpg" %}" style="margin: 20px 10px 30px 10px" alt="En construcción">
+          </div>
+        </div>
+      </div>
+      </div>
+    <!--property end-->
+
+
+
+{% endblock content %}

@@ -51,7 +51,7 @@
                     {{ curso.date_start.day }}
                   </span>
                   <span class="month">
-                    {{  curso.month}}
+                    {{ curso.month }} {{ curso.date_start.year }}
                   </span>
                 </div>
 
@@ -59,7 +59,7 @@
               <div class="col-lg-10 col-sm-10">
                   {% if curso.img %}
                   <div class="blog-img">
-                    <img src="{{ curso.img.url }}" alt="Imagen del lugar de la visita"/>
+                    <img src="{{ curso.img.url }}" alt="Imagen del tema del curso"/>
                   </div>
                   {% endif %}
 
@@ -76,13 +76,13 @@
               </div>
               <div class="col-lg-10 col-sm-10">
                 <h1>
-                  <a href="blog-detail.html">
+                  <a href="{% url 'web:curso' curso.id %}">
                     {{ curso.title }}
                   </a>
                 </h1>
                 <p>
                     {% autoescape off %}
-                      {{ curso.resumen }}
+                      {{ curso.summary }}
                     {% endautoescape %}
                 </p>
                 <a href="{% url 'web:curso' curso.id %}" class="btn btn-primary">
