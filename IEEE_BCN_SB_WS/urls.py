@@ -18,13 +18,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-import web
 from IEEE_BCN_SB_WS import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^polls/', include('polls.urls')),
-    url(r'^cursos/python', web.views.python, name='python'),
     url(r'', include('web.urls', namespace="web")),
 ]
 

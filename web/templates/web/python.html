@@ -1,0 +1,137 @@
+{% extends 'web/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Curso | IEEE BCN SB{% endblock title %}
+
+
+  {% block content %}
+
+<!--breadcrumbs start-->
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-4">
+            <h1>
+                Curso Python
+            </h1>
+          </div>
+          <div class="col-lg-8 col-sm-8">
+            <ol class="breadcrumb pull-right">
+              <li>
+                <a href="/">
+                  Inicio
+                </a>
+              </li>
+              <li class="active">
+                Cursos
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--breadcrumbs end-->
+
+
+
+ <!--container start-->
+    <div class="container">
+      <div class="row">
+        <!--blog start-->
+        <div class="col-lg-9">
+          <div class="blog-item">
+            <div class="row">
+
+              <div class="col-lg-2 col-sm-2">
+                <div class="date-wrap">
+                  <span class="date">6-10</span>
+                  <span class="month">Febrero</span>
+                </div>
+
+              </div><div class="col-lg-10 col-sm-10">
+
+
+                <div class="blog-img gs">
+                  <img src="{% static "web/img/pythonShort.jpg" %}" alt="">
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-lg-2 col-sm-2 text-right">
+
+
+
+              </div><div class="col-lg-10 col-sm-10">
+                <h1>Curso introductorio a Python
+  </h1>
+  <h2 id="tables-example">Duración</h2>
+  <p>17,5 horas (3,5 horas diarias, 1 semana) + 6 horas no presenciales</p>
+  <p>Del 6 al 10 de febrero. De 15-18:30h </p>
+  <h2 id="tables-example">Ubicación</h2>
+  <p>Campus Nord UPC, Barcelona, aula C6S302.</p>
+  <h2 id="tables-example">Precio</h2>
+  <p>Gratuito</p>
+  <h2 id="tables-example">Conocimientos previos</h2>
+  <p>Al ser un curso introductorio no requiere de conocimientos previos. </p>
+  <p>No es en todo caso un curso de iniciación a la programación, conocimientos básicos de programación podrían ser necesarios para seguir correctamente el temario.</p>
+  <h2 id="tables-example">Objetivos del curso</h2>
+  <p>Al ser un curso introductorio no requiere de conocimientos previos. </p>
+                <ol>
+                  <li>
+                    <b>Lenguaje</b>: Una vez finalizado el alumno sera capaz de entender y realizar programas en Python3. Principalmente consiste en la sintaxis del lenguaje junto con los conceptos que implementa como OOP, funciones, tipos de datos u excepciones entre otros.
+                  </li>
+                  <li>
+                    <b>Usos del lenguaje (aka bibliotecas)</b>: El alumno sera capaz de hacer cosas útiles con el lenguaje. En esta área se incluyen temas como interficias gráficas, web, persistencia de datos básica y otras utilidades básicas presentes en la Python Standar Library
+                  </li>
+                  <li>
+                    <b>Introducción ingeniera del software</b>: No solo como realizar programas, sino como hacer buenos programas. Se introducirán temas como testing, debbuguin, organización del código, documentación y distribución de software..
+                  </li>
+                </ol>
+                  <p>Puesto que se trata de un curso introductorio relativamente corto, se busca una explicación en anchura más que en profundidad.</p>
+                </p>
+
+                  <a href="https://www.eventbrite.es/e/registro-curso-introductorio-a-python-31348370821" class="btn btn-primary btn-lg" >Registro</a>
+
+
+</p>
+
+                <div class="media">
+                  <a class="pull-left" href="javascript:;">
+
+                  </a>
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+    <!--container end-->
+
+
+{% endblock content %}
+
+{% block postScripts %}
+  {{ block.super }}
+      <script>
+      wow = new WOW(
+        {
+          boxClass:     'wow',      // default
+          animateClass: 'animated', // default
+          offset:       0          // default
+        }
+      )
+        wow.init();
+    </script>
+{% endblock postScripts %}
