@@ -80,3 +80,10 @@ def conferencia(request, conferencia_id):
     conferencia.month = months[conferencia.date_start.month - 1]
     return render(request, 'web/conferencia.html', {'conferencia': conferencia, 'username': request.user.username})
 
+def python(request):
+    latest_courses_list = Curso.objects.order_by('-date_start')#[:5]
+    for c in latest_courses_list:
+        c.month = months[c.date_start.month-1]
+    context = {'cursos_list': latest_courses_list, 'username': request.user.username}
+    return render(request, 'web/cursos.html', context)
+

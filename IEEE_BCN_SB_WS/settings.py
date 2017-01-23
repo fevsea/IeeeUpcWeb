@@ -125,3 +125,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT='/home/alejandro/code/IeeeUpcWeb/media'
+
+APPEND_SLASH = True # Not working, yet

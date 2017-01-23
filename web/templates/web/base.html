@@ -66,7 +66,7 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="{% url 'web:index' %}">
-                <img src="{% static "web/img/IEEE_logo.png" %}" alt="Logo IEEE" height="75" width="230"/>
+                <img src="{% static "web/img/IEEE_logo.png" %}" alt="Logo IEEE" height="75" width="230" style="margin-bottom: 15px;margin-top: -5px;"/>
               </a>
           </div>
           <div class="navbar-collapse collapse">
@@ -79,18 +79,22 @@
                       "dropdown" data-toggle="dropdown" >Actividades <i class="fa fa-angle-down"></i>
                       </a>
                       <ul class="dropdown-menu">
+                          {% comment %}
                           <li>
                               <a href="{% url 'web:proyectos' %}">Proyectos</a>
                           </li>
+                          {% endcomment %}
                           <li>
                               <a href="{% url 'web:cursos' %}">Cursos</a>
                           </li>
+                          {% comment %}
                           <li>
                               <a href="{% url 'web:visitas' %}">Visitas</a>
                           </li>
                           <li>
                               <a href="{% url 'web:conferencias' %}">Conferencias</a>
                           </li>
+                           {% endcomment %}
                           <li>
                               <a href="{% url 'web:buran' %}">Buran</a>
                           </li>
@@ -129,7 +133,9 @@
               <p><i class="fa fa-envelope pr-10"></i>Email :   <a href="javascript:;"> ieee@ieee.upc.edu</a></p>
             </address>
           </div>
-          <div class="col-lg-3 col-sm-3">
+            {% comment %}
+          <div class="col-lg-3 col-sm-3"
+
             <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
               <h1>
                 Our Company
@@ -162,17 +168,19 @@
               </ul>
             </div>
           </div>
+
           <div class="col-lg-3 col-sm-3">
             <div class="text-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".7s">
               <h1>
                 Text Widget
               </h1>
-              <p>
                 This is a text widget.Lorem ipsum dolor sit amet.
                 This is a text widget.Lorem ipsum dolor sit amet.
               </p>
             </div>
           </div>
+        {% endcomment %}
+
         </div>
       </div>
     </footer>
