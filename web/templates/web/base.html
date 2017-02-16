@@ -74,37 +74,33 @@
                   <li>
                       <a href="{% url 'web:ieee' %}">IEEE</a>
                   </li>
+                  <li>
+                      <a href="{% url 'web:proyectos' %}">Proyectos</a>
+                  </li>
                   <li class="dropdown">
                       <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
                       "dropdown" data-toggle="dropdown" >Actividades <i class="fa fa-angle-down"></i>
                       </a>
                       <ul class="dropdown-menu">
-                          {% comment %}
-                          <li>
-                              <a href="{% url 'web:proyectos' %}">Proyectos</a>
-                          </li>
-                          {% endcomment %}
                           <li>
                               <a href="{% url 'web:cursos' %}">Cursos</a>
                           </li>
-                          {% comment %}
                           <li>
                               <a href="{% url 'web:visitas' %}">Visitas</a>
                           </li>
                           <li>
-                              <a href="{% url 'web:conferencias' %}">Conferencias</a>
+                              <a href="{% url 'web:otros' %}">Otros</a>
                           </li>
-                           {% endcomment %}
                           <li>
                               <a href="{% url 'web:buran' %}">Buran</a>
                           </li>
                       </ul>
                   </li>
-                  <!--
+                  {% comment %}
                   <li>
                       <a href="ieee.html">Agenda</a>
                   </li>
-                  -->
+                  {% endcomment %}
                   <li>
                       <a href="{% url 'web:contact' %}">Contacto</a>
                   </li>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Visita(models.Model):
@@ -8,6 +9,7 @@ class Visita(models.Model):
     description = models.TextField()
     id = models.AutoField(primary_key=True)
     img = models.ImageField(null=True, upload_to = 'img/actividad')
+    author = models.ForeignKey(User, null=True, blank=False)
 
     def __str__(self):
         return self.title
@@ -20,6 +22,7 @@ class Proyecto(models.Model):
     description = models.TextField()
     id = models.AutoField(primary_key=True)
     img = models.ImageField(null=True, upload_to='img/actividad')
+    author = models.ForeignKey(User, null=True, blank=False)
 
     def __str__(self):
         return self.title
@@ -32,11 +35,12 @@ class Curso(models.Model):
     description = models.TextField()
     id = models.AutoField(primary_key=True)
     img = models.ImageField(null=True, upload_to = 'img/actividad')
+    author = models.ForeignKey(User, null=True, blank=False)
 
     def __str__(self):
         return self.title
 
-class Conferencia(models.Model):
+class Otro(models.Model):
     title = models.CharField(max_length=200, verbose_name='Título')
     date_start = models.DateTimeField('Fecha de inicio')
     date_finish = models.DateTimeField('Fecha de finalización')
@@ -44,6 +48,7 @@ class Conferencia(models.Model):
     description = models.TextField()
     id = models.AutoField(primary_key=True)
     img = models.ImageField(null=True, upload_to = 'img/actividad')
+    author = models.ForeignKey(User, null=True, blank=False)
 
     def __str__(self):
         return self.title

@@ -5,8 +5,6 @@ from . import views
 app_name = 'web'
 
 urlpatterns = [
-    # curs pyhton
-    url(r'^cursos/python', views.python, name='python'),
     # ex: ~/
     url(r'^$', views.index, name='index'),
     # ex: ~/contact
@@ -22,7 +20,7 @@ urlpatterns = [
     # ex: ~/visitas/5/
     url(r'^visitas/(?P<visita_id>[0-9]+)/$', views.visita, name='visita'),
     # ex: ~/cursos
-    url(r'^cursos$', views.python, name='cursos'),
+    url(r'^cursos$', views.cursos, name='cursos'),
     # ex: ~/cursos/5/
     url(r'^cursos/(?P<curso_id>[0-9]+)/$', views.curso, name='curso'),
     # ex: ~/proyectos
@@ -30,8 +28,7 @@ urlpatterns = [
     # ex: ~/proyecto/5/
     url(r'^proyectos/(?P<proyecto_id>[0-9]+)/$', views.proyecto, name='proyecto'),
     # ex: ~/conferencias
-    url(r'^conferencias$', views.conferencias, name='conferencias'),
-    # ex: ~/conferencia/5/
-    url(r'^conferencias/(?P<conferencia_id>[0-9]+)/$', views.conferencia, name='conferencia'),
-
+    url(r'^otros$', views.otros, name='otros'),
+    # ex: ~/otros/5/
+    url(r'^otros/(?P<otro_id>[0-9]+)/$', views.otro, name='otro'),
 ]

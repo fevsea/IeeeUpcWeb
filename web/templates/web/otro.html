@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-lg-4 col-sm-4">
             <h1>
-                {{ conferencia.title }}
+                {{ otro.title }}
             </h1>
           </div>
           <div class="col-lg-8 col-sm-8">
@@ -22,12 +22,12 @@
                 </a>
               </li>
               <li>
-                <a href="{% url 'web:conferencias' %}">
-                  Conferencias
+                <a href="{% url 'web:otros' %}">
+                  Otros
                 </a>
               </li>
               <li class="active">
-                 Conferencia
+                 Otro
               </li>
             </ol>
           </div>
@@ -48,18 +48,18 @@
               <div class="col-lg-2 col-sm-2">
                 <div class="date-wrap">
                   <span class="date">
-                    {{ conferencia.date_start.day }}
+                    {{ otro.date_start.day }}
                   </span>
                   <span class="month">
-                    {{ conferencia.month }} {{ conferencia.date_start.year }}
+                    {{ otro.month }} {{ otro.date_start.year }}
                   </span>
                 </div>
 
               </div>
               <div class="col-lg-10 col-sm-10">
-                  {% if conferencia.img %}
+                  {% if otro.img %}
                   <div class="blog-img">
-                    <img src="{{ conferencia.img.url }}" alt="Imagen de la conferencia"/>
+                    <img src="{{ otro.img.url }}" alt="Imagen de la actividad"/>
                   </div>
                   {% endif %}
 
@@ -70,17 +70,17 @@
                 <div class="author">
                   Por
                   <a href="#">
-                    {{ username }}
+                    {{ otro.author }}
                   </a>
                 </div>
               </div>
               <div class="col-lg-10 col-sm-10">
                 <h1>
-                    {{ conferencia.title }}
+                    {{ otro.title }}
                 </h1>
                 <p>
                     {% autoescape off %}
-                      {{ conferencia.description }}
+                      {{ otro.description }}
                     {% endautoescape %}
                 </p>
               </div>

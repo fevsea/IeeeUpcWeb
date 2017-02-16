@@ -13,7 +13,7 @@
         <div class="row">
           <div class="col-lg-4 col-sm-4">
             <h1>
-              Conferencias
+              Otros
             </h1>
           </div>
           <div class="col-lg-8 col-sm-8">
@@ -24,7 +24,7 @@
                 </a>
               </li>
               <li class="active">
-                Conferencias
+                Otros
               </li>
             </ol>
           </div>
@@ -40,26 +40,26 @@
         <!--blog start-->
         <div class="col-lg-9 ">
 
-      {% if conferencias_list %}
+      {% if otors_list %}
     <ul>
-    {% for conferencia in conferencias_list %}
+    {% for otros in otros_list %}
         <div class="blog-item">
             <div class="row">
               <div class="col-lg-2 col-sm-2">
                 <div class="date-wrap">
                   <span class="date">
-                    {{ conferencia.date_start.day }}
+                    {{ otro.date_start.day }}
                   </span>
                   <span class="month">
-                    {{ conferencia.month }} {{ conferencia.date_start.year }}
+                    {{ otro.month }} {{ otro.date_start.year }}
                   </span>
                 </div>
 
               </div>
               <div class="col-lg-10 col-sm-10">
-                  {% if conferencia.img %}
+                  {% if otro.img %}
                   <div class="blog-img">
-                    <img src="{{ conferencia.img.url }}" alt="Imagen de la conferencia"/>
+                    <img src="{{ otro.img.url }}" alt="Imagen de la actividad"/>
                   </div>
                   {% endif %}
 
@@ -70,22 +70,22 @@
                 <div class="author">
                   Por
                   <a href="#">
-                    {{ username }}
+                    {{ otro.author }}
                   </a>
                 </div>
               </div>
               <div class="col-lg-10 col-sm-10">
                 <h1>
-                  <a href="{% url 'web:conferencia' conferencia.id %}">
-                    {{ conferencia.title }}
+                  <a href="{% url 'web:otro' otro.id %}">
+                    {{ otro.title }}
                   </a>
                 </h1>
                 <p>
                     {% autoescape off %}
-                      {{ conferencia.summary }}
+                      {{ otro.summary }}
                     {% endautoescape %}
                 </p>
-                <a href="{% url 'web:conferencia' conferencia.id %}" class="btn btn-primary">
+                <a href="{% url 'web:otro' otro.id %}" class="btn btn-primary">
                   Mas información
                 </a>
               </div>
@@ -94,7 +94,7 @@
     {% endfor %}
     </ul>
     {% else %}
-        <h2>No hay conferencias que mostrar... por ahora.</h2>
+        <h2>No hay nada que mostrar... por ahora.</h2>
     {% endif %}
 
         </div>
