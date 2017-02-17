@@ -12,11 +12,11 @@ months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agost
 
 # Create your views here.
 def index(request):
-    latests = list(Visita.objects.order_by('-date_start')[:2])
-    latests += list(Curso.objects.order_by('-date_start')[:2])
-    latests += list(Otro.objects.order_by('-date_start')[:1])
-    latests += list(Proyecto.objects.order_by('-date_start')[:3])
-    context = {'latests': latests}
+    visitas = list(Visita.objects.order_by('-date_start')[:2])
+    cursos = list(Curso.objects.order_by('-date_start')[:2])
+    otros = list(Otro.objects.order_by('-date_start')[:1])
+    proyectos = list(Proyecto.objects.order_by('-date_start')[:3])
+    context = {'visitas': visitas, 'cursos': cursos, 'otros':otros, 'proyectos':proyectos}
     return render(request, 'web/index.html', context)
 
 def buran(request):

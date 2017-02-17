@@ -70,100 +70,93 @@
             </div>
           </div>
 
+
+
+
           <!--feature end-->
         </div>
       </div>
     </div>
 
-      <div class="bg-lg">
+
+
+
+    <!--recent work start-->
+    <div class="bg-lg">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 recent">
             <h3 class="recent-work">
               Actividades recientes
             </h3>
-            <p>Alguna de las actividades que hemos hecho recientemente</p>
-            <div id="owl-demo" class="owl-carousel owl-theme wow fadeIn animated" style="opacity: 1; display: block; visibility: visible; animation-name: fadeIn;" data-wow-animation-name="fadeIn">
+            <p>Últimos proyectos y actividades realizadas</p>
+            <div id="owl-demo" class="owl-carousel owl-theme wow fadeIn">
 
-              <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 3420px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(0px, 0px, 0px);"><div class="owl-item" style="width: 285px;"><div class="item view view-tenth">
-                <img src="http://localhost:8000/media/img/actividad/FB_IMG_1463769706308.jpg" alt="work Image">
+                {% if proyectos %}
+                {% for item in proyectos %}
+              <div class="item view view-tenth">
+                <img src="{{ item.img.url }}" alt="{{ item.title }}">
                 <div class="mask">
-                  <a href="blog-detail.html" class="info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Details">
+                  <a href="{% url 'web:proyecto' item.id %}" class="info" data-toggle="tooltip" data-placement="top" title="{{ item.title }}">
                     <i class="fa fa-link">
                     </i>
                   </a>
                 </div>
-              </div></div><div class="owl-item" style="width: 285px;"><div class="item view view-tenth">
-                <img src="http://localhost:8000/media/img/actividad/FB_IMG_1463769706308.jpg" alt="work Image">
+              </div>
+                {% endfor %}
+            {% endif %}
+
+                {% if cursos %}
+                {% for item in cursos %}
+              <div class="item view view-tenth">
+                <img src="{{ item.img.url }}" alt="{{ item.title }}">
                 <div class="mask">
-                  <a href="blog-detail.html" class="info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Details">
+                  <a href="{% url 'web:curso' item.id %}" class="info" data-toggle="tooltip" data-placement="top" title="{{ item.title }}">
                     <i class="fa fa-link">
                     </i>
                   </a>
                 </div>
-              </div></div><div class="owl-item" style="width: 285px;"><div class="item view view-tenth">
-                <img src="http://localhost:8000/media/img/actividad/FB_IMG_1463769706308.jpg" alt="work Image">
+              </div>
+                {% endfor %}
+            {% endif %}
+
+                {% if visitas %}
+                {% for item in visitas %}
+              <div class="item view view-tenth">
+                <img src="{{ item.img.url }}" alt="{{ item.title }}">
                 <div class="mask">
-                  <a href="blog-detail.html" class="info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Details">
+                  <a href="{% url 'web:visita' item.id %}" class="info" data-toggle="tooltip" data-placement="top" title="{{ item.title }}">
                     <i class="fa fa-link">
                     </i>
                   </a>
                 </div>
-              </div></div><div class="owl-item" style="width: 285px;"><div class="item view view-tenth">
-                <img src="http://localhost:8000/media/img/actividad/FB_IMG_1463769706308.jpg" alt="work Image">
+              </div>
+                {% endfor %}
+            {% endif %}
+
+                {% if otros %}
+                {% for item in otros %}
+              <div class="item view view-tenth">
+                <img src="{{ item.img.url }}" alt="{{ item.title }}">
                 <div class="mask">
-                  <a href="blog-detail.html" class="info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Details">
+                  <a href="{% url 'web:otro' item.id %}" class="info" data-toggle="tooltip" data-placement="top" title="{{ item.title }}">
                     <i class="fa fa-link">
                     </i>
                   </a>
                 </div>
-              </div></div><div class="owl-item" style="width: 285px;"><div class="item view view-tenth">
-                <img src="http://localhost:8000/media/img/actividad/FB_IMG_1463769706308.jpg" alt="work Image">
-                <div class="mask">
-                  <a href="blog-detail.html" class="info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Details">
-                    <i class="fa fa-link">
-                    </i>
-                  </a>
-                </div>
-              </div></div><div class="owl-item" style="width: 285px;"><div class="item view view-tenth">
-                <img src="http://localhost:8000/media/img/actividad/FB_IMG_1463769706308.jpg" alt="work Image">
-                <div class="mask">
-                  <a href="blog-detail.html" class="info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Details">
-                    <i class="fa fa-link">
-                    </i>
-                  </a>
-                </div>
-              </div></div></div></div>
+              </div>
+                {% endfor %}
+            {% endif %}
 
 
 
-
-
-
-
-            <div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
+            </div>
           </div>
         </div>
       </div>
       <!--recent work end-->
-    </div>
 
 
-
-        <!--property start-->
-      <!--
-      <div class="bg-lg">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft">
-            <img src="{% static "web/img/temp.jpg" %}" style="margin: 20px 10px 30px 10px" alt="En construcción">
-          </div>
-        </div>
-      </div>
-      </div>
-      -->
-
-    <!--property end-->
 
           </div>
            </div>
